@@ -16,17 +16,28 @@
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 # DEALINGS IN THE SOFTWARE.
 
-from __future__ import annotations
-
-from logging import getLogger
-from typing import TYPE_CHECKING
-
-if TYPE_CHECKING:
-    ...
+from enum import Enum
 
 
-logger = getLogger(__name__)
+class ChannelType(Enum):
+    GUILD_TEXT = 0
+    DM = 1
+    GUILD_VOICE = 2
+    GROUP_DM = 3
+    GUILD_CATEGORY = 4
+    GUILD_NEWS = 5
+    GUILD_STORE = 6
+    GUILD_NEWS_THREAD = 10
+    GUILD_PUBLIC_THREAD = 11
+    GUILD_PRIVATE_THREAD = 12
+    GUILD_STAGE_VOICE = 13
 
 
-class User:
-    ...
+class VideoQualityMode(Enum):
+    AUTO = 1
+    FULL = 2
+
+
+class OverwriteType(Enum):
+    ROLE = 0
+    MEMBER = 1

@@ -8,6 +8,7 @@
 # Software is furnished to do so, subject to the following conditions:
 # The above copyright notice and this permission notice shall be included in
 # all copies or substantial portions of the Software.
+#
 # THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
 # OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 # FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -18,15 +19,15 @@
 
 from __future__ import annotations
 
-from logging import getLogger
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, TypedDict
 
 if TYPE_CHECKING:
-    ...
+    from ..enums import OverwriteType
+    from ..types.snowflake import Snowflake
 
 
-logger = getLogger(__name__)
-
-
-class User:
-    ...
+class PermissionOverwritePayload(TypedDict):
+    id: Snowflake
+    type: OverwriteType
+    allow: str
+    deny: str

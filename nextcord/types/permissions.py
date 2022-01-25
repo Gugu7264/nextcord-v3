@@ -21,12 +21,14 @@ from __future__ import annotations
 from logging import getLogger
 from typing import TYPE_CHECKING
 
+from ..flags import PermissionsFlags
+
 if TYPE_CHECKING:
     ...
-
 
 logger = getLogger(__name__)
 
 
-class User:
-    ...
+class PermissionOverwrite:
+    def __init__(self):
+        ...
